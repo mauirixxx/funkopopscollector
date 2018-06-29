@@ -18,7 +18,7 @@ if (isset($_SESSION['userid'])){
 	echo '<TR><TD>Pop #</TD><TD>Pop Name</TD><TD>Date Added</TD><TD>Pop Collection</TD></TR>';
 	if (mysqli_num_rows($result) > 0) {
 		while ($row = $result->fetch_array()){
-			echo '<TR><TD><A HREF="edit.php?id=' . $row['funkoid'] . '">' . $row['popno'] . '</A></TD><TD>' . $row['popname'] . '</TD><TD>' . $row['inserteddate'] . '</TD><TD>' . $row['popcollection'] . '</TD></TR>';
+			echo '<TR><TD><A HREF="edit.php?id=' . $row['funkoid'] . '">' . $row['popno'] . '</A></TD><TD>' . $row['popname'] . '</TD><TD>' . $row['inserteddate'] . '</TD><TD><A HREF="search.php?cid=' . $row['popcollectionid'] . '>' . $row['popcollection'] . '</A></TD></TR>';
 		}
 	}
 	echo '</TABLE>';
