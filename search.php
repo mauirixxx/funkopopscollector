@@ -7,7 +7,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['username'])) {
 	$searchtype = mysqli_real_escape_string($con, $searchtype);
 	$searchname = (isset($_POST['searchname']) ? $_POST['searchname'] : null);
 	$searchname = mysqli_real_escape_string($con, $searchname);
-	$searchcollection = (isset($_GET['cid'], $_POST['collectionid']) ? $_POST['collectionid'] : null);
+	$searchcollection = (isset($_POST['collectionid']) ? $_POST['collectionid'] : null);
 	$searchcollection = mysqli_real_escape_string($con, $searchcollection);
 	if (!empty($searchname) || !empty($searchcollection)) {
 		if ($searchtype == "name") {
