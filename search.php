@@ -3,7 +3,7 @@ $pagetitle = "Funko Pop Search";
 include_once ('header.php');
 if (isset($_SESSION['userid']) && ($_SESSION['username'])) {
 	echo '<BODY onLoad="document.funkosearch.searchname.focus()">';
-	$searchtype = (isset($_POST['stype']) ? $_POST['stype'] : null);
+	$searchtype = (isset($_POST['stype']) ? $_POST['stype'] : $_GET['search']);
 	$searchtype = mysqli_real_escape_string($con, $searchtype);
 	$searchname = (isset($_POST['searchname']) ? $_POST['searchname'] : null);
 	$searchname = mysqli_real_escape_string($con, $searchname);
